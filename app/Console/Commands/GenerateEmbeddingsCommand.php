@@ -29,9 +29,9 @@ class GenerateEmbeddingsCommand extends Command
         $this->info('Starting embedding generation...');
 
         $embeddingService = new EmbeddingService();
-        $processed = $embeddingService->generateEmbeddingsForCategories();
+        $processed = $embeddingService->generateEmbeddingsForServices();
 
-        $this->info("Successfully generated embeddings for {$processed} categories!");
+        $this->info("Successfully generated embeddings for {$processed} services!");
 
         return 0;
     }

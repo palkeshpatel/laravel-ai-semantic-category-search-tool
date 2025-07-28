@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Imports\CategoriesImport;
+use App\Imports\HierarchicalCategoriesImport;
 use Illuminate\Console\Command;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -37,7 +37,7 @@ class ImportCategoriesCommand extends Command
         $this->info("Starting import from: {$filePath}");
 
         try {
-            $import = new CategoriesImport();
+            $import = new HierarchicalCategoriesImport();
             Excel::import($import, $filePath);
 
             $this->info('Categories imported successfully!');
